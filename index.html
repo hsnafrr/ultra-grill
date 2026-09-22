@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ultra Grill — Brazilian Churrasco All You Can Eat (Prototype)</title>
+  <meta name="description" content="Ultra Grill (prototype): konsep Brazilian grill &amp; BBQ all you can eat 90 menit. Daging dipanggang staf, dibawa dengan tusukan besar, dan dipotong langsung di mejamu. Reservasi via WhatsApp +62 896-2092-8296.">
+  <meta name="theme-color" content="#0D0A08">
+  <!-- Prototype concept site: keep out of search results -->
+  <meta name="robots" content="noindex">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:title" content="Ultra Grill — Brazilian Churrasco (Prototype)">
+  <meta property="og:description" content="All you can eat 90 menit. Daging datang ke mejamu, dipotong di depanmu.">
+  <meta property="og:image" content="images/menu.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D4A64A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'/%3E%3C/svg%3E">
+
+  <!-- Decide motion mode before first paint: scroll-driven film unless reduced motion is requested -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduce) d.classList.add('js-seq');
+    })();
+  </script>
+
+  <!-- First film frame: portrait crop for phones, 16:9 for everything else -->
+  <link rel="preload" as="image" href="frames/m/f001.webp" media="(orientation: portrait)" fetchpriority="high">
+  <link rel="preload" as="image" href="frames/d/f001.webp" media="(orientation: landscape)" fetchpriority="high">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,400..500&family=Manrope:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Lucide icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#konsep">Lewati intro</a>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Ultra Grill, kembali ke atas">
+        <svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg>
+        <span>Ultra Grill</span>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Navigasi utama">
+        <a href="#konsep">Konsep</a>
+        <a href="#paket">Paket</a>
+        <a href="#menu">Menu</a>
+        <a href="#lokasi">Lokasi</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="https://wa.me/6289620928296?text=Halo%20Ultra%20Grill%2C%20saya%20mau%20reservasi" target="_blank" rel="noopener">
+          Reservasi
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Buka menu">
+          <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="Menu seluler">
+        <a href="#konsep"><span>01</span>Konsep</a>
+        <a href="#paket"><span>02</span>Paket</a>
+        <a href="#menu"><span>03</span>Menu</a>
+        <a href="#lokasi"><span>04</span>Lokasi</a>
+      </nav>
+      <p class="mobile-menu-meta">WhatsApp +62 896-2092-8296<br>16.00&ndash;23.00 WIB &middot; Prototype</p>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO: scroll-driven film ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-stage">
+        <div class="hero-media" aria-hidden="true">
+          <picture>
+            <source media="(orientation: portrait)" srcset="frames/m/f001.webp" width="540" height="720">
+            <img class="hero-poster" src="frames/d/f001.webp" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
+          </picture>
+          <canvas class="hero-canvas"></canvas>
+          <div class="scrim scrim-base"></div>
+          <div class="scrim scrim-end"></div>
+        </div>
+
+        <div class="hero-intro">
+          <p class="overline">Brazilian Churrasco &middot; Prototype</p>
+          <h1 id="hero-title" class="hero-title">Churrasco Brasil, level <em>ultra</em>.</h1>
+          <p class="hero-sub">All you can eat 90 menit. Daging dipanggang oleh tim grill, dibawa dengan tusukan besar, lalu dipotong langsung di mejamu.</p>
+          <div class="hero-cue" aria-hidden="true">
+            <span>Gulir untuk mulai</span>
+            <svg class="icon"><use href="#i-down"/></svg>
+          </div>
+        </div>
+
+        <div class="chapters-wrap">
+          <h2 class="sr-only">Dari api sampai ke mejamu</h2>
+          <ol class="chapters">
+            <li class="chapter">
+              <img class="chapter-img" src="images/ch1.webp" alt="Tusukan daging sapi dipanggang di atas api" width="800" height="450" loading="lazy" decoding="async">
+              <span class="chapter-num">01</span>
+              <h3 class="chapter-title">Dipanggang di atas api</h3>
+              <p>Potongan sapi dan ayam ditusuk besar, lalu dipanggang perlahan sampai permukaannya karamel.</p>
+            </li>
+            <li class="chapter">
+              <img class="chapter-img" src="images/ch2.webp" alt="Staf membalik steak di atas panggangan dengan capit" width="800" height="450" loading="lazy" decoding="async">
+              <span class="chapter-num">02</span>
+              <h3 class="chapter-title">Kamu tidak perlu memanggang</h3>
+              <p>Tim grill yang menjaga setiap potongan. Kamu cukup duduk, ngobrol, dan menunggu giliran berikutnya.</p>
+            </li>
+            <li class="chapter">
+              <img class="chapter-img" src="images/ch3.webp" alt="Steak panggang disajikan di atas piring" width="800" height="450" loading="lazy" decoding="async">
+              <span class="chapter-num">03</span>
+              <h3 class="chapter-title">Datang bergiliran</h3>
+              <p>Selama sesi 90 menit, potongan demi potongan diantar ke mejamu secara bertahap.</p>
+            </li>
+            <li class="chapter">
+              <img class="chapter-img" src="images/ch4.webp" alt="Staf memotong daging langsung dari tusukan besar" width="800" height="450" loading="lazy" decoding="async">
+              <span class="chapter-num">04</span>
+              <h3 class="chapter-title">Dipotong di depanmu</h3>
+              <p>Tusukan besar dibawa ke meja dan dagingnya dipotong langsung ke piringmu.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="hero-lockup">
+          <svg class="lockup-crown" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flame"/></svg>
+          <p class="lockup-mark" aria-label="Ultra Grill">Ultra Grill</p>
+          <p class="lockup-tag">Brazilian Grill &amp; BBQ &middot; All You Can Eat</p>
+          <p class="lockup-meta">Mulai <strong>Rp150.000 nett</strong> / orang &middot; sesi 90 menit</p>
+          <div class="lockup-cta">
+            <a class="btn btn-primary" href="https://wa.me/6289620928296?text=Halo%20Ultra%20Grill%2C%20saya%20mau%20reservasi" target="_blank" rel="noopener">
+              Reservasi via WhatsApp
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#paket">Lihat paket</a>
+          </div>
+        </div>
+
+        <div class="hero-rail" aria-hidden="true">
+          <div class="rail-seg"><span class="rail-label">Api</span><i><b></b></i></div>
+          <div class="rail-seg"><span class="rail-label">Grill</span><i><b></b></i></div>
+          <div class="rail-seg"><span class="rail-label">Meja</span><i><b></b></i></div>
+          <div class="rail-seg"><span class="rail-label">Potong</span><i><b></b></i></div>
+        </div>
+        <a class="hero-skip" href="#konsep">Lewati intro <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ============ KONSEP ============ -->
+    <section class="section konsep" id="konsep" aria-labelledby="konsep-title">
+      <div class="wrap konsep-grid">
+        <div class="konsep-copy">
+          <p class="overline" data-reveal>Konsepnya</p>
+          <h2 id="konsep-title" class="h2" data-reveal>Bukan Korean BBQ.<br>Ini <em>churrasco</em>.</h2>
+          <p class="lead" data-reveal>Di Ultra Grill kamu tidak sibuk membalik daging. Tim kami yang memanggang, membawa tusukan ke meja, dan memotongnya di depanmu, bergiliran selama sesi berlangsung.</p>
+
+          <div class="compare" data-reveal>
+            <div class="compare-head">
+              <span>Biasanya</span>
+              <span>Di Ultra Grill</span>
+            </div>
+            <div class="compare-row">
+              <span class="c-old"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Panggang sendiri</span>
+              <span class="c-new"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Dipanggang oleh staf</span>
+            </div>
+            <div class="compare-row">
+              <span class="c-old"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Ambil daging sendiri</span>
+              <span class="c-new"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Diantar ke meja</span>
+            </div>
+            <div class="compare-row">
+              <span class="c-old"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Sibuk pegang capit</span>
+              <span class="c-new"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Fokus ngobrol &amp; makan</span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="media konsep-media" style="background-image:url(data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JZACdMoR3JoArhNuKV1+8KPNPLsReQAD1zA0qxKkdfP/TcSNe3BcyyVAcPf4AV6/BjLQzMs2B/xYZv6kC4s/9OTgA78eklJfTyGVMfsN6TU/auBoeaTXrz+C0C0bX/xaiLhXIzPul1mp/4fntYvXM7baAMp2qE0AAAA==)">
+          <img src="images/konsep.webp" alt="Deretan tusukan daging sapi di atas api panggangan" width="1280" height="720" loading="lazy" decoding="async" data-parallax>
+          <figcaption>Tusukan besar, api terbuka, dan asap: cara Brasil memanggang daging.</figcaption>
+        </figure>
+      </div>
+
+      <div class="wrap">
+        <dl class="stats">
+          <div class="stat" data-reveal><dt>Sesi all you can eat</dt><dd><span class="stat-num">90</span>menit</dd></div>
+          <div class="stat" data-reveal><dt>Pilihan paket</dt><dd><span class="stat-num">2</span>level</dd></div>
+          <div class="stat" data-reveal><dt>Harga sudah</dt><dd><span class="stat-num">Nett</span>per orang</dd></div>
+          <div class="stat" data-reveal><dt>Mulai buka</dt><dd><span class="stat-num">16.00</span>WIB</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ PAKET ============ -->
+    <section class="section paket" id="paket" aria-labelledby="paket-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="overline" data-reveal>Paket</p>
+          <h2 id="paket-title" class="h2" data-reveal>Pilih <em>levelmu</em>.</h2>
+          <p class="lead" data-reveal>Dua paket, sama-sama makan sepuasnya selama sekitar 90 menit. Bedanya ada di potongan premium.</p>
+        </div>
+
+        <div class="plans">
+          <article class="plan" data-reveal aria-labelledby="plan-classic">
+            <header class="plan-head">
+              <h3 id="plan-classic" class="plan-name">Classic</h3>
+              <p class="plan-desc">Rangkaian churrasco klasik, dari roti sampai nanas panggang.</p>
+              <p class="plan-price"><span class="rp">Rp</span>150.000 <span class="per">nett / orang</span></p>
+            </header>
+            <ul class="plan-list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Garlic Bread</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Spicy Chicken</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Alcatra</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Onion Beef</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Maminha <span class="tag tag-ember">Best seller</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Coração <span class="muted">(jantung ayam)</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Abacaxi <span class="muted">(nanas panggang)</span></li>
+            </ul>
+            <a class="btn btn-ghost btn-block" href="https://wa.me/6289620928296?text=Halo%20Ultra%20Grill%2C%20saya%20mau%20reservasi" target="_blank" rel="noopener">
+              Reservasi Classic
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
+
+          <article class="plan plan-featured" data-reveal aria-labelledby="plan-ultra">
+            <header class="plan-head">
+              <div class="plan-title-row">
+                <h3 id="plan-ultra" class="plan-name">Ultra</h3>
+                <span class="plan-badge"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg>Paling lengkap</span>
+              </div>
+              <p class="plan-desc">Semua menu Classic, ditambah potongan sapi premium.</p>
+              <p class="plan-price"><span class="rp">Rp</span>220.000 <span class="per">nett / orang</span></p>
+            </header>
+            <ul class="plan-list">
+              <li class="plan-inherit"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Semua menu Classic (7 item)</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Original Beef Belly</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Spicy Beef Belly</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Tenderloin Garlic Steak</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="https://wa.me/6289620928296?text=Halo%20Ultra%20Grill%2C%20saya%20mau%20reservasi" target="_blank" rel="noopener">
+              Reservasi Ultra
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
+        </div>
+
+        <p class="note" data-reveal>Prototype: nama paket, harga, dan isi menu di atas adalah contoh ilustrasi. Tanya detail lewat WhatsApp <a href="https://wa.me/6289620928296?text=Halo%20Ultra%20Grill%2C%20saya%20mau%20reservasi" target="_blank" rel="noopener">+62 896-2092-8296</a>.</p>
+      </div>
+    </section>
+
+    <!-- ============ MENU / KAMUS ============ -->
+    <section class="section menu" id="menu" aria-labelledby="menu-title">
+      <div class="wrap menu-grid">
+        <div class="menu-aside">
+          <p class="overline" data-reveal>Kamus churrasco</p>
+          <h2 id="menu-title" class="h2" data-reveal>Kenali potongannya sebelum datang.</h2>
+          <p class="lead" data-reveal>Nama-nama Portugis di menu churrasco, dijelaskan singkat.</p>
+          <figure class="media menu-media" style="background-image:url(data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABwBACdASoYAA4APu1iqU2ppaQiMAgBMB2JagCdMoADKgbY3+uZQc4ijKN+gAD+8rQxWGLJUIFICl+AgmGjtUPwSb/eFLzEuAtGPfX7BhaTghTL6FVrYsdVaiXjd5XtuMvq/PG0QNJqzAL7m3wMIxlF1c0kYvT9H/AAfR2WB5RT+dehj+FjqpgXWHTyWYAA)">
+            <img src="images/menu.webp" alt="Irisan daging sapi panggang dengan bagian dalam merah muda" width="1280" height="720" loading="lazy" decoding="async" data-parallax>
+          </figure>
+        </div>
+
+        <ul class="glossary">
+          <li class="g-item" data-reveal>
+            <div class="g-top"><h3 class="g-name">Maminha</h3><span class="tag tag-ember">Best seller</span></div>
+            <p>Potongan sapi yang terkenal lembut dan juicy.</p>
+          </li>
+          <li class="g-item" data-reveal>
+            <div class="g-top"><h3 class="g-name">Alcatra</h3><span class="tag">Classic</span></div>
+            <p>Potongan sapi yang umum dipakai dalam churrasco Brasil.</p>
+          </li>
+          <li class="g-item" data-reveal>
+            <div class="g-top"><h3 class="g-name">Coração</h3><span class="tag">Classic</span></div>
+            <p>Jantung ayam panggang, menu khas churrasco.</p>
+          </li>
+          <li class="g-item" data-reveal>
+            <div class="g-top"><h3 class="g-name g-plain">Onion Beef</h3><span class="tag">Classic</span></div>
+            <p>Daging sapi berbumbu bawang.</p>
+          </li>
+          <li class="g-item" data-reveal>
+            <div class="g-top"><h3 class="g-name g-plain">Spicy Chicken</h3><span class="tag">Classic</span></div>
+            <p>Ayam panggang berbumbu pedas.</p>
+          </li>
+          <li class="g-item" data-reveal>
+            <div class="g-top"><h3 class="g-name g-plain">Garlic Bread</h3><span class="tag">Classic</span></div>
+            <p>Roti panggang berbumbu bawang putih.</p>
+          </li>
+          <li class="g-item" data-reveal>
+            <div class="g-top"><h3 class="g-name">Abacaxi</h3><span class="tag">Penutup</span></div>
+            <p>Nanas panggang ala Brasil, penutup khas churrasco.</p>
+          </li>
+          <li class="g-item" data-reveal>
+            <div class="g-top"><h3 class="g-name g-plain">Beef Belly</h3><span class="tag tag-gold">Ultra</span></div>
+            <p>Potongan sapi berlemak dengan tekstur juicy. Tersedia original dan spicy.</p>
+          </li>
+          <li class="g-item" data-reveal>
+            <div class="g-top"><h3 class="g-name g-plain">Tenderloin Garlic Steak</h3><span class="tag tag-gold">Ultra</span></div>
+            <p>Tenderloin dengan rasa bawang putih.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ MOMEN (marquee) ============ -->
+    <section class="moments" aria-label="Cocok untuk">
+      <p class="sr-only">Cocok untuk ulang tahun, makan bareng teman, gathering kantor, dinner berdua, dan traktiran keluarga.</p>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Ulang tahun</span><span>Makan bareng teman</span><span>Gathering kantor</span><span>Dinner berdua</span><span>Traktiran keluarga</span>
+          <span>Ulang tahun</span><span>Makan bareng teman</span><span>Gathering kantor</span><span>Dinner berdua</span><span>Traktiran keluarga</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LOKASI ============ -->
+    <section class="section lokasi" id="lokasi" aria-labelledby="lokasi-title">
+      <div class="wrap lokasi-grid">
+        <div class="lokasi-copy">
+          <p class="overline" data-reveal>Lokasi &amp; jam</p>
+          <h2 id="lokasi-title" class="h2" data-reveal>Mampir ke Ultra Grill.</h2>
+
+          <ul class="info">
+            <li class="info-row" data-reveal>
+              <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+              <div>
+                <h3>Alamat</h3>
+                <p>Jl. Prototype No. 1, Yogyakarta <span class="muted">(alamat contoh)</span></p>
+              </div>
+            </li>
+            <li class="info-row" data-reveal>
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:hyvestudio1504@gmail.com?subject=Reservasi%20Ultra%20Grill">hyvestudio1504@gmail.com</a></p>
+              </div>
+            </li>
+            <li class="info-row" data-reveal>
+              <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+              <div>
+                <h3>Jam buka</h3>
+                <p>16.00&ndash;23.00 WIB</p>
+                <p class="info-note">Jam operasional contoh untuk prototype.</p>
+              </div>
+            </li>
+            <li class="info-row" data-reveal>
+              <svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg>
+              <div>
+                <h3>Reservasi</h3>
+                <p>WhatsApp <a href="https://wa.me/6289620928296?text=Halo%20Ultra%20Grill%2C%20saya%20mau%20reservasi" target="_blank" rel="noopener">+62 896-2092-8296</a><br>Instagram <a href="https://www.instagram.com/hsnrr.tech/" target="_blank" rel="noopener">@hsnrr.tech</a></p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="btn-row" data-reveal>
+            <a class="btn btn-primary" href="https://wa.me/6289620928296?text=Halo%20Ultra%20Grill%2C%20saya%20mau%20reservasi" target="_blank" rel="noopener">
+              Chat WhatsApp
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="mailto:hyvestudio1504@gmail.com?subject=Reservasi%20Ultra%20Grill">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+              Kirim Email
+            </a>
+          </div>
+        </div>
+
+        <div class="map">
+          <div class="map-placeholder" aria-hidden="true">
+            <svg class="icon"><use href="#i-pin"/></svg>
+            <span>Ultra Grill &middot; Yogyakarta</span>
+          </div>
+          <iframe title="Peta ilustrasi lokasi Ultra Grill di Yogyakarta" data-src="https://www.google.com/maps?q=Yogyakarta&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final" aria-labelledby="final-title">
+      <div class="final-bg" aria-hidden="true" style="background-image:url(data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JYgC7L1yVhijNygJVPyJ9hx+pKAD+JMfISQDWzlS1U5MgZgTkOcK37T1m4UoYrOm8d+GI7N96ZKbzdce4zvCmyot8sYHXX0rbbVhl9eCtfWy/AnoinDPH45m/hCqDHk66lvnsxwLIw0yM19SJzlG7CUD4AAAA)">
+        <img src="images/final.webp" alt="" width="1280" height="720" loading="lazy" decoding="async" data-parallax>
+      </div>
+      <div class="wrap final-inner">
+        <svg class="final-crown" aria-hidden="true"><use href="#i-flame"/></svg>
+        <h2 id="final-title" class="h1" data-reveal>Siap naik ke level <em>ultra</em>?</h2>
+        <p class="lead" data-reveal>Chat WhatsApp untuk reservasi. Sebutkan tanggal, jam, jumlah orang, dan paket pilihanmu.</p>
+        <div class="btn-row btn-row-center" data-reveal>
+          <a class="btn btn-primary btn-lg" href="https://wa.me/6289620928296?text=Halo%20Ultra%20Grill%2C%20saya%20mau%20reservasi" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+            WhatsApp Kami
+          </a>
+          <a class="btn btn-ghost btn-lg" href="https://www.instagram.com/hsnrr.tech/" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg>
+            @hsnrr.tech
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <span class="brand"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg><span>Ultra Grill</span></span>
+        <p>Brazilian Grill &amp; BBQ &middot; All You Can Eat. Situs prototype.</p>
+      </div>
+      <div class="footer-col">
+        <h2>Kunjungi</h2>
+        <p>Jl. Prototype No. 1, Yogyakarta</p>
+        <p>16.00&ndash;23.00 WIB</p>
+      </div>
+      <div class="footer-col">
+        <h2>Jelajahi</h2>
+        <nav class="footer-links" aria-label="Tautan footer">
+          <a href="#konsep">Konsep</a>
+          <a href="#paket">Paket</a>
+          <a href="#menu">Menu</a>
+          <a href="#lokasi">Lokasi</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Kontak</h2>
+        <a class="footer-ig" href="https://wa.me/6289620928296?text=Halo%20Ultra%20Grill%2C%20saya%20mau%20reservasi" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>+62 896-2092-8296
+        </a>
+        <a class="footer-ig" href="https://www.instagram.com/hsnrr.tech/" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg>@hsnrr.tech
+        </a>
+        <a class="footer-ig" href="mailto:hyvestudio1504@gmail.com?subject=Reservasi%20Ultra%20Grill">
+          <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>hyvestudio1504@gmail.com
+        </a>
+      </div>
+    </div>
+    <div class="wrap">
+      <p class="footer-note">Ultra Grill adalah situs prototype. Harga, menu, alamat, dan jam buka hanya contoh ilustrasi, bukan restoran yang beroperasi.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha256-lsAbgfRKMpDitFMvVeLJU0sq3EMnOhnzdWsstB8P0LY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha256-MIIZOQ5eO4TNoMSB5wyqmCCIOuEL2kTm6aFJqBqsSz8=" crossorigin="anonymous" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
